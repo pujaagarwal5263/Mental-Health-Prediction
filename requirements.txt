@@ -13,7 +13,7 @@ scikit-learn-intelex==2023.2.1
 mlxtend==1.0.2
 
 # Pickle
-pickle-mixin==0.6.1
+pickle-mixin==1.0.2
 
 # Neural Network
 scikit-neuralnetwork==0.7.3
