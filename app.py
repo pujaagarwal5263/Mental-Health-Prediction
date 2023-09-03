@@ -10,6 +10,10 @@ CORS(app)
 # Load your trained machine learning model
 model = joblib.load('./model.pkl')
 
+@app.route('/hello', methods=['GET'])
+def hello():
+    return "Hii"
+
 @app.route('/predict', methods=['POST'])
 @cross_origin(origin='http://localhost:3000', allow_headers=['Content-Type'])
 def predict():
