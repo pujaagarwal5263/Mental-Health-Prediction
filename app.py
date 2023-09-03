@@ -2,13 +2,16 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app)
 
 # Load your trained machine learning model
 model = joblib.load('./model.pkl')
 
 @app.route('/predict', methods=['POST'])
+@cross_origin(origin='http://localhost:3000', allow_headers=['Content-Type'])
 def predict():
     data = request.get_json()  # Get input data from the request
     print(data)
